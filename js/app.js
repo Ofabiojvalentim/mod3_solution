@@ -22,17 +22,17 @@
   
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
-    var narrowCtrl = this;
-    narrowCtrl.searchTerm = '';
-    narrowCtrl.found = [];
+    var nidctrl = this;
+    nidctrl.searchTerm = '';
+    nidctrl.found = [];
 
-    narrowCtrl.search = function () {
-      narrowCtrl.found = [];
-      if (narrowCtrl.searchTerm.trim() != "") {
-          var promise = MenuSearchService.getMatchedMenuItems(narrowCtrl.searchTerm);
+    nidctrl.search = function () {
+      nidctrl.found = [];
+      if (nidctrl.searchTerm.trim() != "") {
+          var promise = MenuSearchService.getMatchedMenuItems(nidctrl.searchTerm);
           promise.then(function (result) {
-              narrowCtrl.found = result;
-              console.log(result);
+              nidctrl.found = result;
+              
           })
           .catch(function (error) {
               console.log("Oh no! Something went terribly wrong: " + error);
@@ -40,8 +40,8 @@
       }
     }
 
-    narrowCtrl.remove = function (index) {
-      narrowCtrl.found.splice(index, 1);
+    nidctrl.remove = function (index) {
+      nidctrl.found.splice(index, 1);
     }
   
   }
