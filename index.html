@@ -8,20 +8,20 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
   </head>
-<body ng-controller='NarrowItDownController as narrowCtrl' >
+<body ng-controller='NarrowItDownController as nidctrl' >
    <div class="container">
     <h1>Narrow Down Your Chinese Menu Choice</h1>
 
     <div class="form-group">
-      <input ng-model="narrowCtrl.searchTerm" type="text" placeholder="search term" class="form-control">
+      <input ng-model="nidctrl.searchTerm" type="text" placeholder="search term" class="form-control">
     </div>
     <div class="form-group narrow-button">
-      <button ng-click="narrowCtrl.search()" class="btn btn-primary">Narrow It Down For Me!</button>
+      <button ng-click="nidctrl.search()" class="btn btn-primary">Narrow It Down For Me!</button>
     </div>
 
   </div>
   <div class="container">
-    <found-items items="narrowCtrl.found" on-remove="narrowCtrl.remove(index)"></found-items>
+    <found-items items="nidctrl.found" on-remove="nidctrl.remove(index)"></found-items>
   </div>
 </body>
 </html>
